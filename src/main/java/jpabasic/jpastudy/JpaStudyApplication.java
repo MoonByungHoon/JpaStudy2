@@ -22,8 +22,6 @@ public class JpaStudyApplication {
 
     try {
 
-      Order order = new Order();
-      order.addOrderItem(new OrderItem());
 
     } catch (Exception e) {
       tx.rollback();
