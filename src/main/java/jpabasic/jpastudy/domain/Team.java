@@ -9,18 +9,11 @@ import java.util.List;
 
 @Entity
 @Setter @Getter
-public class Member {
+public class Team {
 
   @Id @GeneratedValue
-  @Column(name = "member_id")
+  @Column(name = "team_id")
   private Long id;
 
   private String name;
-
-  private String city;
-  private String street;
-  private String zipcode;
-
-  @OneToMany(mappedBy = "member")
-  private List<Order> orders = new ArrayList<>();
 }

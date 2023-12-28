@@ -1,4 +1,4 @@
-package jpabasic.jpastudy.Entity;
+package jpabasic.jpastudy.entity;
 
 import jakarta.persistence.*;
 import jpabasic.jpastudy.domain.RoleType;
