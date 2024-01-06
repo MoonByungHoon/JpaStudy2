@@ -9,7 +9,10 @@ import java.util.List;
 
 @Entity
 @Getter @Setter
-public class Item {
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+//기본값이 DTYPE이다.
+@DiscriminatorColumn(name = "DTYPE")
+public abstract class Item {
 
   @Id @GeneratedValue
   @Column(name = "item_id")
