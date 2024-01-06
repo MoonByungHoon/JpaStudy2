@@ -1,10 +1,10 @@
 package jpabasic.jpastudy.impl;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@DiscriminatorColumn
 public class Item {
 
   @Id @GeneratedValue
