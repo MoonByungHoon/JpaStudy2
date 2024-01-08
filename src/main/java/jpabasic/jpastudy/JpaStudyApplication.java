@@ -4,10 +4,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
-import jpabasic.jpastudy.domain.Child;
-import jpabasic.jpastudy.domain.Order;
-import jpabasic.jpastudy.domain.OrderItem;
-import jpabasic.jpastudy.domain.Parent;
+import jpabasic.jpastudy.domain.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -23,14 +20,18 @@ public class JpaStudyApplication {
     tx.begin();
 
     try {
-      Child child1 = new Child();
-      Child child2 = new Child();
 
-      Parent parent = new Parent();
-      parent.addChild(child1);
-      parent.addChild(child2);
+      Member member = new Member("member");
 
-      em.persist(parent);
+      member.getFavoriteFoods().add("피자");
+      member.getFavoriteFoods().add("햄버거");
+      member.getFavoriteFoods().add("아이스크림");
+
+      member.getAddressHistory().add(new Address("top city", "street1", "100"));
+      member.getAddressHistory().add(new Address("middle city", "street2", "200"));
+      member.getAddressHistory().add(new Address("bottom city", "street3", "300"));
+
+      em.persist(member);
 
       tx.commit();
     } catch (Exception e) {
